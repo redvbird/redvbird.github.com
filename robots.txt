@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://redvbird.github.com/sitemap.xml 
