@@ -9,7 +9,7 @@
   <meta name="author" content="Your Name">
 
   
-  <meta name="description" content="Github搭建博客 1，首先是注册github帐号，用gmail邮箱帐号也可登录，然后安装git客户端，sudo apt-get install git即可安装git ,安装完成以后使用git &#8211;version查看git版本信息 2，创建ssh key $ ssh-keygen - &hellip;">
+  <meta name="description" content="Github搭建笔记 1，首先是注册github帐号，用gmail邮箱帐号也可登录，然后安装git客户端，sudo apt-get install git即可安装git ,安装完成以后使用git &#8211;version查看git版本信息 2，创建ssh key $ ssh-keygen -t &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -71,7 +71,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/04/04/my-own-blog/">My Own Blog</a></h1>
+      <h1 class="entry-title"><a href="/blog/2013/04/04/my-own-blog/">Github搭建博客记录</a></h1>
     
     
       <p class="meta">
@@ -94,51 +94,50 @@
   </header>
 
 
-  <div class="entry-content"><pre><code>                 Github搭建博客
-</code></pre>
+  <div class="entry-content"><h1>Github搭建笔记</h1>
 
 <p>1，首先是注册github帐号，用gmail邮箱帐号也可登录，然后安装git客户端，sudo apt-get install git即可安装git ,安装完成以后使用git  &#8211;version查看git版本信息</p>
 
 <p>2，创建ssh key
-   $ ssh-keygen -t rsa -C “your_email@youremail.com”
-后面的your_email@youremail.com就是注册github所使用的邮箱，输入后会要求确认创建路径以及添加密码，密码为空也行，注意在这个命令里面默认的就是将生成的key放在.ssh文件夹的根目录下，如果是想自己修改路径  $  ssh-keygen -t rsa -f ~/.ssh/your_path/git_blog.octopress -C “your_email@youremail.com”   -f后接文件路径，（此处按照第一个命令结果为例），完成以后会在～/下生成一个.ssh文件夹，里面有两个文件，其中的pub文件id_rsa.pub及为key,将id_rsa.pub打开复制key</p>
+   <code>$ ssh-keygen -t rsa -C “your_email@youremail.com”</code>
+后面的your_email@youremail.com就是注册github所使用的邮箱，输入后会要求确认创建路径以及添加密码，密码为空也行，注意在这个命令里面默认的就是将生成的key放在.ssh文件夹的根目录下，如果是想自己修改路径  <code>$  ssh-keygen -t rsa -f ~/.ssh/your_path/git_blog.octopress -C “your_email@youremail.com”</code>   -f后接文件路径，（此处按照第一个命令结果为例），完成以后会在～/下生成一个.ssh文件夹，里面有两个文件，其中的pub文件id_rsa.pub及为key,将id_rsa.pub打开复制key</p>
 
 <p>3,回到github页面，登录进入以后点击Account Settings,左边选择SSH Keys, Add SSH Key, 标题随便写，内容里面就直接粘贴刚刚复制过来的key,保存
 新建一个repo，点击右上角的Create a new repo，后面的名字固定格式，your_name/your_name.github.com</p>
 
 <p>4，验证是否已经成功连上github
   $  ssh  -T  git@github.com
-   这个位置我自己安装时前期一直出错 Error:Permission denied(publickey),先前一直以为是权限的问题， 但前面加上sudo 还是一样，后面才发现是我的key的路径没添加，于是 $ ssh-add -l ,又报错，it could&#8217;t connect to your authentication agent, 用下面的方法可以解决， ssh-keygen -lf ~/.ssh/id_rsa.pub
-不过如果是把.pub文件放在.ssh下的分文件夹下的话可能还有问题，最好是把里面的两个文件copy到.ssh的下面（更多关于Error:Permission denied (publickey)错误的原因及解决方案参考https://help.github.com/articles/error-permission-denied-publickey）
+   这个位置我自己安装时前期一直出错 Error:Permission denied(publickey),先前一直以为是权限的问题， 但前面加上sudo 还是一样，后面才发现是我的key的路径没添加，于是 <code>$ ssh-add -l</code> ,又报错，it could&#8217;t connect to your authentication agent, 用下面的方法可以解决， <code>ssh-keygen -lf ~/.ssh/id_rsa.pub</code>
+不过如果是把.pub文件放在.ssh下的分文件夹下的话可能还有问题，最好是把里面的两个文件copy到.ssh的下面（更多关于Error:Permission denied (publickey)错误的原因及解决方案参考<a href="https://help.github.com/articles/error-permission-denied-publickey">https://help.github.com/articles/error-permission-denied-publickey</a>
   解决掉错误问题后运行 $ ssh -T git@github.com的话会出现提示是否继续，输入yes,就已经成功连接到github了</p>
 
-<p> 5，配置git
+<p>5，配置git
   要上传的话就需要用到git,先配置用户名邮箱
-$ git  config  &#8211;global user.name “your name”
-$ git  config  &#8211;global user.email “your_email”
+<code>$ git  config  --global user.name “your name”</code>
+<code>$ git  config  --global user.email “your_email”</code>
 要上传还需要用到Octopress ,git 配置好后
-$ git clone git://github.com/imathis/octopress.git
-$ cd octopress
-$ ruby &#8211;version         ruby要是1.9.3版本才行</p>
+<code>$ git clone git://github.com/imathis/octopress.git</code>
+<code>$ cd octopress</code>
+<code>$ ruby --version</code>         ruby要是1.9.3版本才行</p>
 
 <p>然后还要安装bundler
-$ gem  install  bundler
-$ bundle install
+<code>$ gem  install  bundler</code>
+<code>$ bundle install</code>
 如果都成功的话
 $ rake install ,如果不成功再看具体是什么错误，一般到这里了就不会再出什么大问题了</p>
 
 <p>6，连接到github
  这里就需要用到rake ,
-$ rake  setup_github_pages
-会提示输入你所要上传到的地址，一般的格式都是 git@github.com:your_name/your_name.github.com
+<code>$ rake  setup_github_pages</code>
+会提示输入你所要上传到的地址，一般的格式都是 <code>git@github.com:your_name/your_name.github.com</code>
 成功之后
- $rake  generate
-  $ rake  deploy
-如果全都提示成功的话，过几分钟再将你的github刷新看看，进入创建的repo就会发现倒入了很多的文件，再在地址栏里输入your_name.github.com就可以看到自己做的博客了，不过刚开始全都是空的，以后再直接往博客里面添加自己的博客就OK了</p>
+ <code>$rake  generate</code>
+  <code>$ rake  deploy</code>
+如果全都提示成功的话，过几分钟再将你的github刷新看看，进入创建的repo就会发现倒入了很多的文件，再在地址栏里输入<code>your_name.github.com</code>就可以看到自己做的博客了，不过刚开始全都是空的，以后再直接往博客里面添加自己的博客就OK了</p>
 
 <p>附几个帮助性网站
-http://octopress.org/docs/setup/
-http://octopress.org/docs/deploying/github/</p>
+<a href="http://octopress.org/doc/setup/">http://octopress.org/doc/setup/</a>
+<a href="http://octopress.org/docs/deploying/github/">http://octopress.org/docs/deploying/github/</a></p>
 </div>
   
   
@@ -159,7 +158,7 @@ http://octopress.org/docs/deploying/github/</p>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/04/04/my-own-blog/">My own blog</a>
+        <a href="/blog/2013/04/04/my-own-blog/">Github搭建博客记录</a>
       </li>
     
   </ul>

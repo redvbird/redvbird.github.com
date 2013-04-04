@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
-  <link href="http://redvbird.github.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: notes | My Octopress Blog]]></title>
+  <link href="http://redvbird.github.com/blog/categories/notes/atom.xml" rel="self"/>
   <link href="http://redvbird.github.com/"/>
   <updated>2013-04-04T12:23:15-04:00</updated>
   <id>http://redvbird.github.com/</id>
@@ -20,7 +20,7 @@
     <id>http://redvbird.github.com/blog/2013/04/04/my-own-blog</id>
     <content type="html"><![CDATA[<h1>Github搭建笔记</h1>
 
-<p>1，首先是注册github帐号，用gmail邮箱帐号也可登录，然后安装git客户端，sudo apt-get install git即可安装git ,安装完成以后使用git  &#8211;version查看git版本信息</p>
+<p>1，首先是注册github帐号，用gmail邮箱帐号也可登录，然后安装git客户端，sudo apt-get install git即可安装git ,安装完成以后使用git  --version查看git版本信息</p>
 
 <p>2，创建ssh key
    <code>$ ssh-keygen -t rsa -C “your_email@youremail.com”</code>
@@ -31,7 +31,7 @@
 
 <p>4，验证是否已经成功连上github
   $  ssh  -T  git@github.com
-   这个位置我自己安装时前期一直出错 Error:Permission denied(publickey),先前一直以为是权限的问题， 但前面加上sudo 还是一样，后面才发现是我的key的路径没添加，于是 <code>$ ssh-add -l</code> ,又报错，it could&#8217;t connect to your authentication agent, 用下面的方法可以解决， <code>ssh-keygen -lf ~/.ssh/id_rsa.pub</code>
+   这个位置我自己安装时前期一直出错 Error:Permission denied(publickey),先前一直以为是权限的问题， 但前面加上sudo 还是一样，后面才发现是我的key的路径没添加，于是 <code>$ ssh-add -l</code> ,又报错，it could't connect to your authentication agent, 用下面的方法可以解决， <code>ssh-keygen -lf ~/.ssh/id_rsa.pub</code>
 不过如果是把.pub文件放在.ssh下的分文件夹下的话可能还有问题，最好是把里面的两个文件copy到.ssh的下面（更多关于Error:Permission denied (publickey)错误的原因及解决方案参考<a href="https://help.github.com/articles/error-permission-denied-publickey">https://help.github.com/articles/error-permission-denied-publickey</a>
   解决掉错误问题后运行 $ ssh -T git@github.com的话会出现提示是否继续，输入yes,就已经成功连接到github了</p>
 
