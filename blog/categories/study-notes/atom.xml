@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Study | My Octopress Blog]]></title>
-  <link href="http://redvbird.github.com/blog/categories/study/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Study notes | My Octopress Blog]]></title>
+  <link href="http://redvbird.github.com/blog/categories/study-notes/atom.xml" rel="self"/>
   <link href="http://redvbird.github.com/"/>
-  <updated>2013-04-04T12:23:15-04:00</updated>
+  <updated>2013-04-04T12:41:11-04:00</updated>
   <id>http://redvbird.github.com/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
