@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Study notes | My Octopress Blog]]></title>
+  <title><![CDATA[Category: Study notes | 陈小青的个人博客]]></title>
   <link href="http://redvbird.github.com/blog/categories/study-notes/atom.xml" rel="self"/>
   <link href="http://redvbird.github.com/"/>
-  <updated>2013-04-04T12:41:11-04:00</updated>
+  <updated>2013-04-06T21:19:07+08:00</updated>
   <id>http://redvbird.github.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[小青]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Github搭建博客记录]]></title>
     <link href="http://redvbird.github.com/blog/2013/04/04/my-own-blog/"/>
-    <updated>2013-04-04T09:19:00-04:00</updated>
+    <updated>2013-04-04T09:19:00+08:00</updated>
     <id>http://redvbird.github.com/blog/2013/04/04/my-own-blog</id>
     <content type="html"><![CDATA[<h1>Github搭建笔记</h1>
 
