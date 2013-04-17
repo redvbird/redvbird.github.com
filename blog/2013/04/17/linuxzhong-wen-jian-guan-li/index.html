@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>陈小青的个人博客</title>
+  <title>linux中文件管理 - 陈小青的个人博客</title>
   <meta name="author" content="小青">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://redvbird.github.com">
+  <link rel="canonical" href="http://redvbird.github.com/blog/2013/04/17/linuxzhong-wen-jian-guan-li">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="陈小青的个人博客" type="application/atom+xml">
@@ -63,15 +63,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/04/17/linuxzhong-wen-jian-guan-li/">Linux中文件管理</a></h1>
+      <h1 class="entry-title">Linux中文件管理</h1>
     
     
       <p class="meta">
@@ -89,14 +86,14 @@
 
 <time datetime="2013-04-17T19:15:00+08:00" pubdate data-updated="true">Apr 17<span>th</span>, 2013</time>
         
-         | <a href="/blog/2013/04/17/linuxzhong-wen-jian-guan-li/#disqus_thread">Comments</a>
+         | <a href="#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>  1，经常用的一些命令，cp(复制文件或目录) <br/>
+<div class="entry-content"><p>  1，经常用的一些命令，cp(复制文件或目录) <br/>
   cp -参数 （源文件） （目标文件）<br/>
   -d，若源文件为连接文件，则复制链接文件属性而不复制文件本身 <br/>
   -f，强制性复制（force） <br/>
@@ -146,22 +143,16 @@ q        :离开less
    head -n 10 filename  显示文件后10行内容  <br/>
    head -n  +10 filename  将文件10行以后的内容显示出来</p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/04/my-own-blog/">Github搭建博客记录</a></h1>
-    
-    
-      <p class="meta">
-        
+  
+
+<span class="byline author vcard">Posted by <span class="fn">小青</span></span>
+
+      
 
 
 
@@ -173,72 +164,38 @@ q        :离开less
   
 
 
-<time datetime="2013-04-04T09:19:00+08:00" pubdate data-updated="true">Apr 4<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/04/04/my-own-blog/#disqus_thread">Comments</a>
-        
-      </p>
+<time datetime="2013-04-17T19:15:00+08:00" pubdate data-updated="true">Apr 17<span>th</span>, 2013</time>
+      
+
+
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><h1>Github搭建笔记</h1>
-
-<p>1，首先是注册github帐号，用gmail邮箱帐号也可登录，然后安装git客户端，sudo apt-get install git即可安装git ,安装完成以后使用git  &#8211;version查看git版本信息</p>
-
-<p>2，创建ssh key
-   <code>$ ssh-keygen -t rsa -C “your_email@youremail.com”</code>
-后面的your_email@youremail.com就是注册github所使用的邮箱，输入后会要求确认创建路径以及添加密码，密码为空也行，注意在这个命令里面默认的就是将生成的key放在.ssh文件夹的根目录下，如果是想自己修改路径  <code>$  ssh-keygen -t rsa -f ~/.ssh/your_path/git_blog.octopress -C “your_email@youremail.com”</code>   -f后接文件路径，（此处按照第一个命令结果为例），完成以后会在～/下生成一个.ssh文件夹，里面有两个文件，其中的pub文件id_rsa.pub及为key,将id_rsa.pub打开复制key</p>
-
-<p>3,回到github页面，登录进入以后点击Account Settings,左边选择SSH Keys, Add SSH Key, 标题随便写，内容里面就直接粘贴刚刚复制过来的key,保存
-新建一个repo，点击右上角的Create a new repo，后面的名字固定格式，your_name/your_name.github.com</p>
-
-<p>4，验证是否已经成功连上github
-  $  ssh  -T  git@github.com
-   这个位置我自己安装时前期一直出错 Error:Permission denied(publickey),先前一直以为是权限的问题， 但前面加上sudo 还是一样，后面才发现是我的key的路径没添加，于是 <code>$ ssh-add -l</code> ,又报错，it could&#8217;t connect to your authentication agent, 用下面的方法可以解决， <code>ssh-keygen -lf ~/.ssh/id_rsa.pub</code>
-不过如果是把.pub文件放在.ssh下的分文件夹下的话可能还有问题，最好是把里面的两个文件copy到.ssh的下面（更多关于Error:Permission denied (publickey)错误的原因及解决方案参考<a href="https://help.github.com/articles/error-permission-denied-publickey">https://help.github.com/articles/error-permission-denied-publickey</a>
-  解决掉错误问题后运行 $ ssh -T git@github.com的话会出现提示是否继续，输入yes,就已经成功连接到github了</p>
-
-<p>5，配置git
-  要上传的话就需要用到git,先配置用户名邮箱
-<code>$ git  config  --global user.name “your name”</code>
-<code>$ git  config  --global user.email “your_email”</code>
-要上传还需要用到Octopress ,git 配置好后
-<code>$ git clone git://github.com/imathis/octopress.git</code>
-<code>$ cd octopress</code>
-<code>$ ruby --version</code>         ruby要是1.9.3版本才行</p>
-
-<p>然后还要安装bundler
-<code>$ gem  install  bundler</code>
-<code>$ bundle install</code>
-如果都成功的话
-$ rake install ,如果不成功再看具体是什么错误，一般到这里了就不会再出什么大问题了</p>
-
-<p>6，连接到github
- 这里就需要用到rake ,
-<code>$ rake  setup_github_pages</code>
-会提示输入你所要上传到的地址，一般的格式都是 <code>git@github.com:your_name/your_name.github.com</code>
-成功之后
- <code>$rake  generate</code>
-  <code>$ rake  deploy</code>
-如果全都提示成功的话，过几分钟再将你的github刷新看看，进入创建的repo就会发现倒入了很多的文件，再在地址栏里输入<code>your_name.github.com</code>就可以看到自己做的博客了，不过刚开始全都是空的，以后再直接往博客里面添加自己的博客就OK了</p>
-
-<p>附几个帮助性网站
-<a href="http://octopress.org/doc/setup/">http://octopress.org/doc/setup/</a>
-<a href="http://octopress.org/docs/deploying/github/">http://octopress.org/docs/deploying/github/</a></p>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://redvbird.github.com/blog/2013/04/17/linuxzhong-wen-jian-guan-li/" data-via="" data-counturl="http://redvbird.github.com/blog/2013/04/17/linuxzhong-wen-jian-guan-li/" >Tweet</a>
+  
+  
+  
 </div>
-  
-  
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/04/04/my-own-blog/" title="Previous Post: Github搭建博客记录">&laquo; Github搭建博客记录</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
+  </section>
+
+</div>
+
 <aside class="sidebar">
   
     <section>
@@ -259,7 +216,7 @@ $ rake install ,如果不成功再看具体是什么错误，一般到这里了�
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/a617265919@gmail.com">@a617265919@gmail.com</a> on GitHub
@@ -292,6 +249,7 @@ $ rake install ,如果不成功再看具体是什么错误，一般到这里了�
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -306,7 +264,10 @@ $ rake install ,如果不成功再看具体是什么错误，一般到这里了�
       var disqus_shortname = 'your_disqus_short_name';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://redvbird.github.com/blog/2013/04/17/linuxzhong-wen-jian-guan-li/';
+        var disqus_url = 'http://redvbird.github.com/blog/2013/04/17/linuxzhong-wen-jian-guan-li/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

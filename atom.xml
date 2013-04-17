@@ -4,7 +4,7 @@
   <title><![CDATA[陈小青的个人博客]]></title>
   <link href="http://redvbird.github.com/atom.xml" rel="self"/>
   <link href="http://redvbird.github.com/"/>
-  <updated>2013-04-06T23:25:07+08:00</updated>
+  <updated>2013-04-17T21:03:29+08:00</updated>
   <id>http://redvbird.github.com/</id>
   <author>
     <name><![CDATA[小青]]></name>
@@ -12,6 +12,63 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[linux中文件管理]]></title>
+    <link href="http://redvbird.github.com/blog/2013/04/17/linuxzhong-wen-jian-guan-li/"/>
+    <updated>2013-04-17T19:15:00+08:00</updated>
+    <id>http://redvbird.github.com/blog/2013/04/17/linuxzhong-wen-jian-guan-li</id>
+    <content type="html"><![CDATA[<p>  1，经常用的一些命令，cp(复制文件或目录) <br/>
+  cp -参数 （源文件） （目标文件）<br/>
+  -d，若源文件为连接文件，则复制链接文件属性而不复制文件本身 <br/>
+  -f，强制性复制（force） <br/>
+  -i, 若目标文件已存在，在覆盖时会询问操作的进行 <br/>
+  -r， recursive,递归复制，通常用于目录的复制</p>
+
+<p>  2，rm (删除文件或目录) <br/>
+  -f，强制删除  <br/>
+  -r,递归删除 均为常用</p>
+
+<p>  3，mv (移动或重命名文件和目录)  <br/>
+  -f，强制  <br/>
+  -i,移动时有相同的目标文件，会询问操作的进行</p>
+
+<p>  查阅文件命令 <br/>
+  1，cat: 从第一行开始显示文件内容  <br/>
+  2，tac: 从最后一行开始逆向显示文件内容  <br/>
+  3，nl: 显示的时候会输出行号  <br/>
+  4，more: 一页一页的显示文件内容，用空格键翻页</p>
+
+<pre><code> 回车代表向下翻一行， /string：代表向下查下“string”这个keyword    
+ :f ： 显示文件名以及目前显示的行数    
+ q  ： 离开more,不再显示文件内容     
+ b  ： 往回翻页   
+</code></pre>
+
+<p>  5，less: 同样的是一页页的显示，不过可以往前翻页</p>
+
+<pre><code> 跟more用法相差不大   
+space 代表向下翻页   
+/string  :代表向下查询“string”关键字   
+?string  :向上查询“string”关键字     
+n        :重复前一个查询（对应/和？）      
+N        :反向重复前一个查询（对应/和？）   
+q        :离开less
+</code></pre>
+
+<p>  6,head  取出前面几行的内容</p>
+
+<pre><code>head -n （文件）  
+</code></pre>
+
+<p>   head -n 10  filename 显示此文件中前10行的内容  <br/>
+   head -n -10 filename 将文件后10行以外的内容显示出来  <br/>
+ 7，tail  取出后面几行的内容   <br/>
+   tail  -n (filename)    <br/>
+   head -n 10 filename  显示文件后10行内容  <br/>
+   head -n  +10 filename  将文件10行以后的内容显示出来</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Github搭建博客记录]]></title>
